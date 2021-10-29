@@ -1,0 +1,16 @@
+With this code I create and implement multihead Transformers from scratch
+The goal was to automate the optimization process and train the network to create poems
+
+Some Key points about this network:
+- From Scratch implementation of Transformer modules and Attention Mechanism
+- Integrated Glove embeddings with PyTorch's Embedding layer
+- Added Positional Embedding as described in the original paper
+- Preprocessed the Poem data in a way that allowed Transformer to understand the 'flow'
+- Automated the optimization of the network using Optuna
+
+Trained on a dataset of 15,000 poems; Dataset - https://www.kaggle.com/tgdivy/poetry-foundation-poems (over 140000 lines of poem)
+
+My final code had some further improvements to the overall code structure and logging. I had to make some changes to train the model
+on over 15000 poems. That code is not uploaded on GitHub
+
+I used google collab pro to train my network.
