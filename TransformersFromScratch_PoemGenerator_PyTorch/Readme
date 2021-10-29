@@ -14,3 +14,10 @@ My final code had some further improvements to the overall code structure and lo
 on over 15000 poems. That code is not uploaded on GitHub
 
 I used google collab pro to train my network.
+
+Useful Links:
+https://arxiv.org/abs/1706.03762
+http://peterbloem.nl/blog/transformers
+https://www.youtube.com/watch?v=U0s0f995w14
+https://pytorch.org/docs/stable/index.html
+https://www.hyugen.com/article/transformers-in-pytorch-from-scratch-for-nlp-beginners-113cb366a5
