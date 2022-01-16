@@ -1,0 +1,6 @@
+- Created a CRUD application using Spring Boot framework and interacted with Rest API, Lombok, Java Persistence API, H2 and MySQL Databases.
+- Used JPA's abstract functions and SQL native code to build business logic and tested various endpoints using Postman.
+- Focused on Inversion of Control and avoided using concrete implementations
+- Added logging, error management and performed unit tests for Controller, Service and Repository layers using Junit and Mockito
+- Added Springboot profiles to add configuration for different application environments
+- Created custom actuator endpoints and managed default actuator endpoints
