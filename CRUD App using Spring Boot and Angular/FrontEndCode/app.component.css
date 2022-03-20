@@ -1,0 +1,32 @@
+h1,h2,h3,h4,h5,h6 {
+    height: 20px;
+    color: black;
+    text-align: center;
+    font-weight: 1000;
+}
+
+.country {
+    color: palevioletred;
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+}
+
+.slider-button-text{
+    color: black;
+}
+
+.main-div{
+    background-color: rgb(240, 225, 208);
+    border-bottom: 2px solid rgb(219, 157, 150);
+    border-top: 2px solid rgb(219, 157, 150);
+    border-left: 2px solid rgb(219, 157, 150);
+    border-right: 2px solid rgb(219, 157, 150);
+}
+
+.main-table-div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.1%;
+}
+
