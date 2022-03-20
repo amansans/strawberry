@@ -1,0 +1,15 @@
+Overview:
+- Created a CRUD application using Spring Boot framework in Java using Rest API, Java Persistence API, Hibernate and MySQL Database.
+- Used JPA's abstract functions and native code to build SQL queries and tested them using Junit, Mockito and Postman.
+- Built front end services, components, and routing mechanisms using Angular.
+- Used HTML and CSS to build the webpage UI and integrated it with angular components to allow communication with the SQL database.
+
+Angular code is avaiable in the BackEndCode folder
+Frontend Java code is available in the FrontEndCode folder
+
+Here  are some useful links if you're trying to do something similar -
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
+https://www.youtube.com/watch?v=c3gKseNAs9w
+https://developer.mozilla.org/en-US/docs/Web/CSS
+
+If you need help building something similar or have any other queries feel free to reach out to me via Linkedin - https://www.linkedin.com/in/amansansowa/
