@@ -1,0 +1,145 @@
+<h1 class="userpage-header">Manage Users</h1>
+<div class="user-main-div">
+    <button class="getuserlist-button" (click)="unhideDiv('getUserDiv')"> Get Users </button>
+    <button class="getuserlist-button" (click)="unhideDiv('addUserDiv')"> Add User </button>
+    <button class="getuserlist-button" (click)="unhideDiv('updateUserDiv')"> Update User </button>
+    <button class="getuserlist-button" (click)="unhideDiv('deleteUserDiv')"> Delete User </button>
+    <div [hidden] = "hideAddUserList" class="adduser-div">
+
+        <form [formGroup]="userForm" (ngSubmit)="addUser(userForm)">
+
+            <div class="form-group">
+                <label class="userInput-form">First Name :</label>
+                <input type="text" formControlName="firstName"> 
+                <div *ngIf="f['firstName'].invalid && f['firstName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['firstName'].errors && f['firstName'].errors['required']"> *First name cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']"> *First name must have atleast 2 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form">Last Name :</label>
+                <input type="text" formControlName="lastName" >
+                <div *ngIf="f['lastName'].invalid && f['lastName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['lastName'].errors && f['lastName'].errors['required']"> *Last name cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']"> *Last name must have atleast 2 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form">Email ID :</label>
+                <input type="emailId" formControlName="emailId">
+                <div  *ngIf="f['emailId'].invalid && f['emailId'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['emailId'].errors && f['emailId'].errors['required']"> *Email Id cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['emailId'].errors && f['emailId'].errors['invalid']"> *Please enter a valid email address</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form"> Country: </label>
+                <select id="countryName" formControlName="countryName">
+                    <option value="India"> India </option>
+                    <option value="Canada"> Canada </option>
+                    <option value="USA"> USA </option>
+                </select>
+                <div *ngIf="f['countryName'].invalid && f['countryName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['countryName'].errors && f['countryName'].errors['required']"> *Please select a country from the list</small>
+                </div>
+            </div>
+            
+            <div class="submit-div">
+                <button [disabled]="userForm.invalid" type="submit" value="submit" class="submitUser-button"> Submit </button>
+            </div>
+        </form>
+    </div>
+
+    <div [hidden] = "hideUpdateUserList" class="adduser-div">
+
+        <form [formGroup]="userForm" (ngSubmit)="updateUser(userForm)">
+
+            <div class="form-group">
+                <label class="userInput-form">ID :</label>
+                <input type="text" formControlName="id"> 
+                <div *ngIf="f['id'].invalid && f['id'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['id'].errors && f['id'].errors['required']"> *ID cannot be empty</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form">First Name :</label>
+                <input type="text" formControlName="firstName"> 
+                <div *ngIf="f['firstName'].invalid && f['firstName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['firstName'].errors && f['firstName'].errors['required']"> *First name cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']"> *First name must have atleast 2 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form">Last Name :</label>
+                <input type="text" formControlName="lastName" >
+                <div *ngIf="f['lastName'].invalid && f['lastName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['lastName'].errors && f['lastName'].errors['required']"> *Last name cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']"> *Last name must have atleast 2 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form">Email ID :</label>
+                <input type="emailId" formControlName="emailId">
+                <div  *ngIf="f['emailId'].invalid && f['emailId'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['emailId'].errors && f['emailId'].errors['required']"> *Email Id cannot be empty</small>
+                    <small class="danger-text" *ngIf="f['emailId'].errors && f['emailId'].errors['invalid']"> *Please enter a valid email address</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInput-form"> Country </label>
+                <select id="countryName" formControlName="countryName">
+                    <option value="India"> India </option>
+                    <option value="Canada"> Canada </option>
+                    <option value="USA"> USA </option>
+                </select>
+                <div *ngIf="f['countryName'].invalid && f['countryName'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="f['countryName'].errors && f['countryName'].errors['required']"> *Please select a country from the list</small>
+                </div>
+            </div>
+            
+            <div class="submit-div">
+                <button [disabled]="userForm.invalid" type="submit" value="submit" class="submitUser-button"> Submit </button>
+            </div>
+        </form>
+    </div>
+
+    <div [hidden] = "hideDeleteUserList" class="adduser-div">
+
+        <form [formGroup]="deleteUserForm" (ngSubmit)="deleteUser(deleteUserForm)">
+
+            <div class="form-group">
+                <label class="userInput-form">ID :</label>
+                <input type="text" formControlName="id"> 
+                <div *ngIf="d['id'].invalid && d['id'].touched" class="danger-text">
+                    <small class="danger-text" *ngIf="d['id'].errors && d['id'].errors['required']"> *ID cannot be empty</small>
+                </div>
+            </div>
+            
+            <div class="submit-div">
+                <button [disabled]="deleteUserForm.invalid" type="submit" value="submit" class="submitUser-button"> Submit </button>
+            </div>
+        </form>
+    </div>
+    
+    <table [hidden] = "hideGetUserList" class="user-table">
+        <tr class="user-table-row">
+            <th class="user-table-header-division"> First Name </th>
+            <th class="user-table-header-division"> Last Name </th>
+            <th class="user-table-header-division"> Email Id </th>
+            <th class="user-table-header-division"> Country </th>
+        </tr>
+        <tr class="user-table-row" *ngFor="let item of userList">
+            <td class="user-table-division"> {{item.firstName}} </td>
+            <td class="user-table-division"> {{item.lastName}} </td>
+            <td class="user-table-division"> {{item.emailId}} </td>
+            <td class="user-table-division"> {{item.country.countryName}} </td>
+        </tr>
+    </table>
+</div>
