@@ -1,7 +1,7 @@
 Overview:
 
 - Created multiple (5) microservices and configured them to interact with each other using Spring Boot framework
-- Tested API's using using Postman
+- Integrated microservices with MySQL Database and tested API's using using Postman
 - Added Eureka server to register and manage microservices 
 - Built an API Gateway and configured it to communicate with the correct microservice based on URL patterns
 - Created a Git Repository to host and manage application configurations and linked it to the application
