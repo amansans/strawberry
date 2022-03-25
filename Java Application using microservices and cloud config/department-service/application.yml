@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: aman
+    url: jdbc:mysql://localhost:3306/depuser
+    password: Poopfairy1!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+welcome:
+  message: Hi from Dev!
